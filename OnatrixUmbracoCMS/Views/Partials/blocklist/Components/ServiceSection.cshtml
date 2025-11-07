@@ -1,0 +1,105 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.ServiceSection)Model.Content;
+    var settings = Model.Settings as ContentModels.ServiceSettings;
+
+    var sectionColor = settings?.ServiceBgColor.Color ?? "#ffffff";
+}
+
+<section class="services">
+    <div class="content-wrapper">
+
+        @if (settings.ShowServiceLabel)
+        {
+            <h2>@content.ServiceLabel</h2>
+        }
+        <h3>@Html.Raw(content.ServiceTitle)</h3>
+
+        <div class="services-container">
+            <div class="service">
+                <a>
+                    <div class="img-service-container">
+                        <img src="~/images/image-21-min 1.svg" alt="Risk Management icon" />
+                    </div>
+
+                    <h4>Risk Management</h4>
+                    <p>
+                        Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        Excepteur sint occaecat cupidatat non.
+                    </p>
+                </a>
+            </div>
+
+            <div class="service">
+                <a>
+                    <div class="img-service-container">
+                        <img src="~/images/image-21-min 1.svg" alt="Risk Management icon" />
+                    </div>
+
+                    <h4>Risk Management</h4>
+                    <p>
+                        Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        Excepteur sint occaecat cupidatat non.
+                    </p>
+                </a>
+            </div>
+
+            <div class="service">
+                <a>
+                    <div class="img-service-container">
+                        <img src="~/images/image-21-min 1.svg" alt="Risk Management icon" />
+                    </div>
+
+                    <h4>Risk Management</h4>
+                    <p>
+                        Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        Excepteur sint occaecat cupidatat non.
+                    </p>
+                </a>
+            </div>
+
+            <div class="service">
+                <a>
+                    <div class="img-service-container">
+                        <img src="~/images/image-21-min 1.svg" alt="Risk Management icon" />
+                    </div>
+
+                    <h4>Risk Management</h4>
+                    <p>
+                        Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        Excepteur sint occaecat cupidatat non.
+                    </p>
+                </a>
+            </div>
+
+            <div class="service">
+                <a>
+                    <div class="img-service-container">
+                        <img src="~/images/image-21-min 1.svg" alt="Risk Management icon" />
+                    </div>
+
+                    <h4>Risk Management</h4>
+                    <p>
+                        Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        Excepteur sint occaecat cupidatat non.
+                    </p>
+                </a>
+            </div>
+
+            <div class="service">
+                <a>
+                    <div class="img-service-container">
+                        <img src="~/images/image-21-min 1.svg" alt="Risk Management icon" />
+                    </div>
+
+                    <h4>Risk Management</h4>
+                    <p>
+                        Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        Excepteur sint occaecat cupidatat non.
+                    </p>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
