@@ -2,6 +2,8 @@
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ServiceDetail>
 @{
 	Layout = "mainLayout.cshtml";
+
+	var siteSettings = Umbraco.ContentAtRoot().DescendantsOrSelf<SiteSettings>().FirstOrDefault();
 }
 
 <partial name="Partials/Layout/PageHeader" model="(IPageHeader)Model" />
@@ -23,3 +25,8 @@
 		</div>
 	</div>
 </section>
+
+@if (siteSettings != null && siteSettings.ContactDetailsBlock != null)
+{
+	@Html.GetBlockListHtml(siteSettings.ContactDetailsBlock)
+}

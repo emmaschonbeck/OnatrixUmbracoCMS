@@ -1,0 +1,30 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels
+@using Umbraco.Cms.Core.Models.Blocks
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<BlockListItem<AboutInfoSection>>
+
+@{
+    var data = Model.Content;
+}
+
+<section class="about-info-section">
+    <div class="about-info-wrapper">
+        <div class="about-info-image">
+            @if (data.AboutInfoImage != null)
+            {
+                <img src="@data.AboutInfoImage.Url()" alt="@data.AboutInfoImage.Name" />
+            }
+
+            @if (!string.IsNullOrWhiteSpace(data.AboutInfoName))
+            {
+                <p class="about-info-name">@data.AboutInfoName</p>
+            }
+        </div>
+        <div class="about-info-content">
+            <div class="about-info-text">
+                @Html.Raw(data.AboutInfoText)
+            </div>
+        </div>
+
+    </div>
+</section>
+

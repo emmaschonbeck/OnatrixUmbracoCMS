@@ -1,0 +1,38 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels
+@using Umbraco.Cms.Core.Models.Blocks
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<BlockListItem<TestimonialSection>>
+
+@{
+    var data = Model.Content;
+}
+
+<section class="testimonial-section">
+    <div class="testimonial-left">
+
+        <p class="testimonial-label">@data.TestimonialLabel</p>
+
+        <h2 class="testimonial-title">
+            @data.TestimonialTitle
+        </h2>
+
+        <p class="testimonial-body">@data.TestimonialBody</p>
+
+        <div class="testimonial-rating">
+            @for (int i = 0; i < data.TestimonialRating; i++)
+            {
+                <span>★</span>
+            }
+        </div>
+
+        <p class="testimonial-name">
+            <strong>@data.TestimonialName</strong><br />
+        </p>
+    </div>
+
+    <div class="testimonial-right">
+        @if (data.TestimonialImage != null)
+        {
+            <img src="@data.TestimonialImage.Url()" alt="Client">
+        }
+    </div>
+</section>

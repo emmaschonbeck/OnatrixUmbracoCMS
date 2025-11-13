@@ -1,0 +1,70 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+
+@{
+    var content = (ContentModels.ContactDetailsSection)Model.Content;
+
+    var title = content.ContactDetailsTitle?.ToString();
+    var location = content.ContactDetailsLocation?.ToString();
+    var phone = content.ContactDetailsNumber?.ToString();
+    var email = content.ContactDetailsEmail?.ToString();
+
+    var personImg = content.ContactDetailsPersonImage;
+    var bgImg = content.ContactDetailsBgImage;
+    var dotImg = content.ContactDetailsDotImage;
+}
+
+
+<section class="contact-promo">
+    <div class="contact-promo-wrapper">
+
+        <div class="contact-promo-image">
+            @if (bgImg != null)
+            {
+                <img class="promo-bg" src="@bgImg.Url()" alt="">
+            }
+            @if (dotImg != null)
+            {
+                <img class="promo-dots" src="@dotImg.Url()" alt="">
+            }
+            @if (personImg != null)
+            {
+                <img class="promo-person" src="@personImg.Url()" alt="">
+            }
+        </div>
+
+        <div class="contact-promo-content">
+            <h2>@title</h2>
+
+            <ul class="promo-info-list">
+
+                @if (!string.IsNullOrWhiteSpace(location))
+                {
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>@Html.Raw(location)</div>
+                    </li>
+                }
+
+                @if (!string.IsNullOrWhiteSpace(phone))
+                {
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        <div>@Html.Raw(phone)</div>
+                    </li>
+                }
+
+                @if (!string.IsNullOrWhiteSpace(email))
+                {
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        <div>@Html.Raw(email)</div>
+                    </li>
+                }
+
+            </ul>
+
+        </div>
+
+    </div>
+</section>
