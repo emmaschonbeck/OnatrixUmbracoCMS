@@ -1,0 +1,24 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+@{
+    var rootContent = Umbraco.ContentAtRoot();
+    var siteSettings = rootContent.OfType<SiteSettings>().FirstOrDefault();
+
+    var copyright = siteSettings?.FooterCopyright ?? "© Your Company";
+    var creditText = siteSettings?.FooterCreditText ?? "";
+    var creditLink = siteSettings?.FooterCreditLink ?? "#";
+}
+
+<footer class="site-footer">
+    <div class="footer-container">
+        <p>@copyright</p>
+
+        @if (!string.IsNullOrWhiteSpace(creditText))
+        {
+            <p>
+                Credits to <a href="@creditLink" target="_blank">@creditText</a>
+            </p>
+        }
+    </div>
+</footer>
+

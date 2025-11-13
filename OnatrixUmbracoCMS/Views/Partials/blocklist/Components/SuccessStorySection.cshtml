@@ -1,0 +1,35 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.SuccessStorySection)Model.Content;
+}
+
+<section class="success-section">
+    <div class="success-container">
+        @if (!string.IsNullOrWhiteSpace(content.SuccessStoryLabel))
+        {
+            <p class="success-label">@content.SuccessStoryLabel</p>
+        }
+        @if (!string.IsNullOrWhiteSpace(content.SuccessStoryTitle))
+        {
+            <h2 class="success-title">@content.SuccessStoryTitle</h2>
+        }
+        <div class="success-stats">
+            @foreach (var item in content.SuccessStoryItems)
+            {
+                var stat = item.Content as ContentModels.StatsItem;
+
+                <div class="success-stat-item">
+                    <h3 class="stat-number">@stat.StatsItemNumber</h3>
+                    <p class="stat-text">@stat.StatsItemTitle</p>
+                </div>
+            }
+        </div>
+        @if (content.SuccessStoryImage != null)
+        {
+            <div class="success-image">
+                <img src="@content.SuccessStoryImage.Url()" alt="" />
+            </div>
+        }
+    </div>
+</section>

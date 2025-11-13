@@ -1,0 +1,39 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.TrustedSection)Model.Content;
+}
+
+<section class="trusted-section">
+
+    @if (content.TrustedBgImage != null)
+    {
+        <div class="trusted-bg">
+            <img src="@content.TrustedBgImage.Url()" alt="" />
+        </div>
+    }
+
+    <div class="trusted-content">
+        <h2>@content.TrustedTitle</h2>
+        <h3 class="trusted-highlight">@content.TrustedTextHighlight</h3>
+
+        <div class="trusted-body">
+            @content.TrustedTextBody
+        </div>
+
+        @if (@content.TrustedButton != null)
+        {
+            <a class="trusted-btn" href="@content.TrustedButton.Url" target="@content.TrustedButton.Target">
+                @content.TrustedButton.Name
+            </a>
+        }
+    </div>
+
+    @if (@content.TrustedPeopleImage != null)
+    {
+        <div class="trusted-people">
+            <img src="@content.TrustedPeopleImage.Url()" alt="" />
+        </div>
+    }
+
+</section>

@@ -1,0 +1,12 @@
+﻿.umb-tiptap-editor__frame .ProseMirror img {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important;
+}
+
+.umb-tiptap-editor__frame .ProseMirror p > img {
+    display: block !important;
+    width: 100% !important;
+}
