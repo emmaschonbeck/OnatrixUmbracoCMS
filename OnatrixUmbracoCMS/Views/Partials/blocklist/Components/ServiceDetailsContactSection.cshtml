@@ -1,0 +1,24 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.ServiceDetailsContactSection)Model.Content;
+}
+
+<section class="service-contact-section">
+    <div class="service-contact-container">
+
+        <h3>@content.ServiceDetailsContactTitle</h3>
+
+        <form class="service-contact-form">
+            <div class="form-row">
+                <input type="text" placeholder="Name" />
+                <input type="email" placeholder="Email" />
+            </div>
+
+            <textarea placeholder="Question"></textarea>
+
+            <button type="submit">@content.ServiceDetailsContactSubmitLabel</button>
+        </form>
+
+    </div>
+</section>

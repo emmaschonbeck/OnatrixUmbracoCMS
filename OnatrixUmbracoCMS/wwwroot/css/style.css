@@ -478,7 +478,7 @@ body {
 
 .services {
     text-align: center;
-    padding: 6rem 2rem;
+    padding: 1rem 1rem 5rem 1rem;
 }
 
 .services h2 {
@@ -769,6 +769,7 @@ body {
     width: 30%;
     margin: 0 auto;
     display: flex;
+    align-items: center;
     flex-direction: column;
     gap: 1rem;
 }
@@ -822,6 +823,151 @@ body {
   line-height: 1.7;
   color: #535656;
 }
+
+/* ===== SERVICE DETAILS FORM CARD ===== */
+
+.form-card {
+    background-color: var(--main-color);
+    border-radius: 3px;
+    padding: 1.5rem 1rem;
+    max-width: 280px;
+    margin-left: 2rem;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.form-card-content p {
+    color: var(--sub-color-1);
+    opacity: 0.8;
+    line-height: 1;
+    margin-bottom: 1rem;
+}
+
+.form-card-content p + p {
+    color: var(--sub-color-1);
+    opacity: 0.8;
+    line-height: 1;
+    margin-bottom: 2rem;
+    color: var(--White);
+}
+
+.form-card-input-wrapper {
+    background: #ffffff;
+    border-radius: 4px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    border: 1px solid #e5e5e5;
+}
+
+.form-card-input-wrapper input {
+    flex: 1;
+    border: none;
+    padding: 2rem 1rem;
+    font-size: 14px;
+    outline: none;
+}
+
+.form-card-input-wrapper button {
+    width: 44px;
+    height: 100%;
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.form-card-input-wrapper button img {
+    width: 20px;
+    color: var(--main-color);
+}
+
+.form-card::after {
+    content: "";
+    position: absolute;
+    bottom: -45px;
+    right: -5px;
+    width: 150px;
+    height: 150px;
+    background-image: url('/images/Mail.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+
+/* ===== SERVICE DETAILS CONTACT SECTION ===== */
+
+.service-contact-section {
+    margin-top: 4rem;
+}
+
+.service-contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 0 0 3rem;
+}
+
+.service-contact-container h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    color: #4F5955;
+}
+
+.service-contact-form {
+    background: #ffffff;
+    border-radius: 4px;
+}
+
+.service-contact-form .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.service-contact-form input,
+.service-contact-form textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #e1e1e1;
+    border-radius: 3px;
+    font-size: 14px;
+    font-family: inherit;
+    outline: none;
+}
+
+.service-contact-form input:focus,
+.service-contact-form textarea:focus {
+    border-color: #4F5955;
+}
+
+.service-contact-form textarea {
+    height: 120px;
+    resize: none;
+    margin-bottom: 1rem;
+}
+
+.service-contact-form button {
+    background: var(--main-color);
+    color: var(--sub-color-1);
+    padding: 1rem 2.5rem;
+    font-size: 16px;
+    font-weight: 800;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.service-contact-form button:hover {
+    background: #3f4e4a;
+}
+
 
 
 /* ===== ABOUT INFO SECTION ===== */
@@ -1067,12 +1213,11 @@ body {
 /* ===== CONTACT DETAILS SECTION ===== */
 
 .contact-promo {
-    background: #f3f3f3;
     padding: 0;
 }
 
 .contact-promo-wrapper {
-    width: 1200px;
+    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     gap: 7rem;
@@ -1094,7 +1239,7 @@ body {
     position: absolute;
     bottom: 0;
     left: 3rem;
-    width: 95%;
+    width: 100%;
     z-index: 1;
 }
 

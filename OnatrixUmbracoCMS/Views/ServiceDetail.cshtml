@@ -4,6 +4,7 @@
 	Layout = "mainLayout.cshtml";
 
 	var siteSettings = Umbraco.ContentAtRoot().DescendantsOrSelf<SiteSettings>().FirstOrDefault();
+	var isServiceDetail = Umbraco.AssignedContentItem is ServiceDetail;
 }
 
 <partial name="Partials/Layout/PageHeader" model="(IPageHeader)Model" />
@@ -24,6 +25,13 @@
 
 		</div>
 	</div>
+
+	@if (Model.ServiceDetailsContactSection != null)
+	{
+		@Html.GetBlockListHtml(Model.ServiceDetailsContactSection)
+	}
+
+
 </section>
 
 @if (siteSettings != null && siteSettings.ContactDetailsBlock != null)

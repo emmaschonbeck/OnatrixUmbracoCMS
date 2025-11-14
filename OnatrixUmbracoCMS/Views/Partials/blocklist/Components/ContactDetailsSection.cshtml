@@ -1,8 +1,10 @@
 ﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
-
 @{
     var content = (ContentModels.ContactDetailsSection)Model.Content;
+    var settings = Model.Settings as ContentModels.ContactDetailsSettings;
+
+    var sectionColor = settings?.ContactDetailsBgColor?.Color ?? "#ffffff";
 
     var title = content.ContactDetailsTitle?.ToString();
     var location = content.ContactDetailsLocation?.ToString();
@@ -15,7 +17,7 @@
 }
 
 
-<section class="contact-promo">
+<section class="contact-promo" style="background-color:@sectionColor">
     <div class="contact-promo-wrapper">
 
         <div class="contact-promo-image">

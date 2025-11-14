@@ -1,0 +1,22 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.FormCard)Model.Content;
+}
+
+<div class="form-card">
+
+    <div class="form-card-content">
+        @Html.Raw(content.FormText)
+    </div>
+
+    <form class="form-card-form">
+        <div class="form-card-input-wrapper">
+            <input type="email" placeholder="E-mail address" />
+            <button type="submit" aria-label="Submit">
+                <img src="/images/Icon mail.svg" alt="Alternate Text" />
+            </button>
+        </div>
+    </form>
+
+</div>
