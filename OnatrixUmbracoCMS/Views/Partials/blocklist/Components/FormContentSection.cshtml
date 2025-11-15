@@ -1,0 +1,31 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.FormContentSection)Model.Content;
+}
+
+<section class="form-content-section"
+         style="background-image: url('@content.FormContentBgImage?.Url()');">
+
+    <div class="form-content-wrapper">
+        <div class="form-content-text">
+            @Html.Raw(content.FormContentText)
+        </div>
+
+        <form class="form-content-form">
+            <div class="form-row">
+                <input type="text" placeholder="Name" />
+                <input type="text" placeholder="Phone" />
+                <input type="email" placeholder="Email" />
+                <select>
+                    <option>Financial Consulting</option>
+                    <option>Investment</option>
+                    <option>Bussiness Advice</option>
+                </select>
+            </div>
+
+            <button type="submit">@content.FormContentSubmitLabel</button>
+        </form>
+    </div>
+
+</section>
